@@ -17,6 +17,11 @@ docker-compose stop
 # 删除停止的容器(如果想重启则不要执行此命令)
 docker-compose rm -f
 
+#停止所有运行的容器
+#docker stop $(docker ps -a -q)
+#删除停止的容器
+#docker rm $(docker ps -a -q)
+
 #删除停止的容器
 #docker ps -a | grep "Exited" | awk '{print $1 }'|xargs docker rm
 

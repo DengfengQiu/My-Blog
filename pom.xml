@@ -28,7 +28,7 @@
 
     <properties>
         <docker.image.prefix>blog</docker.image.prefix>
-        <docker.plugin.version>0.3.258</docker.plugin.version>
+        <docker.plugin.version>1.0.0</docker.plugin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -162,18 +162,18 @@
     </dependencies>
 
     <!-- 普通的maven打包方式 -->
-    <build>
+<!--     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
     <!-- 普通的maven打包方式 -->
 
     <!-- 结合docker的maven打包方式,并上传提交创建的镜像 -->
-    <!--<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -192,7 +192,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <imageName>ccr.ccs.tencentyun.com/myserver/my-blog</imageName>
                     <dockerDirectory>${project.basedir}/docker-extension/my-blog</dockerDirectory>
                     <resources>
                         <resource>
@@ -204,7 +204,7 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
     <!-- 结合docker的maven打包方式,并上传提交创建的镜像 -->
 
 </project>
